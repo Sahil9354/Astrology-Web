@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jagran Services | Astro Guru</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f7f7f7;
+  color:#222;
+}
+
+
+/* ================= HERO ================= */
+.hero{
+  height:130px;
+  background:linear-gradient(to right,#b80000,#6a0000);
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+.hero-text{
+  color:#fff;
+  font-size:26px;
+  font-weight:600;
+  white-space:nowrap;
+  transform:translateX(100vw);
+  animation:slide 16s linear infinite;
+}
+
+@keyframes slide{
+  from{transform:translateX(100vw);}
+  to{transform:translateX(-120%);}
+}
+
+/* ================= ABOUT JAGRAN ================= */
+.about-jagran{
+  padding:60px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.about-wrapper{
+  max-width:1100px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
+  display:grid;
+  grid-template-columns: 1fr 1.3fr;
+  overflow:hidden;
+}
+
+.about-image img{
+  width:95%;
+  height:100%;
+  object-fit:cover;
+}
+
+.about-content{
+  padding:35px;
+  margin-bottom: 15px;
+}
+
+.about-content h2{
+  color:#6a0000;
+  margin-bottom:15px;
+  font-size:50px;
+}
+
+.about-content p{
+  line-height:1.7;
+  margin-bottom:15px;
+  color:#131111;
+  font-size: 18px;
+}
+
+.about-content ul{
+  list-style:none;
+  font-size: 15px;
+}
+
+.about-content li{
+  margin-bottom:8px;
+  font-weight:500;
+}
+
+/* ================= JAGRAN CARDS ================= */
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:25px;
+}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:18px;
+}
+
+.card h3{
+  color:#6a0000;
+  font-size: 20px;
+  margin-bottom:8px;
+}
+
+.card p{
+  font-size:16px;
+  color:#555;
+}
+
+.whatsapp-btn{
+  margin-top:12px;
+  width:100%;
+  padding:10px;
+  background:#25D366;
+  border:none;
+  color:#fff;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  text-align:center;
+  padding:25px;
+  background:#463838;
+  color:#fff;
+  margin-top:50px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .about-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  .hero-text{
+    font-size:18px;
+  }
+
+  .container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* HIDE PROFILE ICON ON MOBILE */
+@media (max-width: 768px) {
+  .profile {
+    display: none;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+        
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+             <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li > <a href="/pages/About_us.html">About US </a>
+         
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li > <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-text">
+    Divine Jagran & Bhajan Sandhya Services by ASTRO GURU
+  </div>
+</section>
+
+<!-- ================= ABOUT JAGRAN ================= -->
+<section class="about-jagran">
+  <div class="about-wrapper">
+
+    <!-- IMAGE LEFT -->
+    <div class="about-image">
+      <img src="/assets/img/jagran-img1.png" alt="Jagran">
+    </div>
+
+    <!-- CONTENT RIGHT -->
+    <div class="about-content">
+      <h2>About Jagran</h2>
+      <p>
+        Jagran is a sacred devotional gathering where devotees
+        spend the night singing bhajans, performing aarti and
+        remembering divine energies.
+      </p>
+
+      <p>
+        Namastu organizes complete Jagran services with
+        experienced pandits, professional bhajan mandlis and
+        proper spiritual arrangements.
+      </p>
+
+      <ul>
+        <li>✔️ Complete Pooja & Aarti</li>
+        <li>✔️ Professional Bhajan Mandli</li>
+        <li>✔️ Home, Temple & Society Jagran</li>
+        <li>✔️ Peace, positivity & blessings</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= JAGRAN TYPES ================= -->
+<section class="container">
+
+  <div class="card">
+    <img src="/assets/img/matakichauki.jpeg">
+    <div class="card-content">
+      <h3>Mata Ki Chowki</h3>
+      <p>Devotional bhajans dedicated to Maa Durga.</p>
+      <button class="whatsapp-btn" onclick="sendWhatsApp('Mata Ki Chowki')">Contact via whatsapp</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/assets/img/ShivJagran.png">
+    <div class="card-content">
+      <h3>Shiv Jagran</h3>
+      <p>All-night bhajans and Rudri Paath for Lord Shiva.</p>
+      <button class="whatsapp-btn" onclick="sendWhatsApp('Shiv Jagran')">Contact via whatsapp</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/assets/img/krishna-bhajan.png">
+    <div class="card-content">
+      <h3>Krishna Bhajan Sandhya</h3>
+      <p>Melodious bhajans of Lord Krishna.</p>
+      <button class="whatsapp-btn" onclick="sendWhatsApp('Krishna Bhajan Sandhya')">Contact via whatsapp</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/assets/img/Sai-bhajan.png">
+    <div class="card-content">
+      <h3>Sai Sandhya</h3>
+      <p>Peaceful Sai Baba bhajans & aarti.</p>
+      <button class="whatsapp-btn" onclick="sendWhatsApp('Sai Sandhya')">Contact via whatsapp</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/assets/img/navratri-special.jpeg">
+    <div class="card-content">
+      <h3>Navratri Jagran</h3>
+      <p>Grand Navratri special bhajan sandhya.</p>
+      <button class="whatsapp-btn" onclick="sendWhatsApp('Navratri Jagran')">Contact via whatsapp</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/assets/img/hanuman-jagran.png">
+    <div class="card-content">
+      <h3>Hanuman Jagran</h3>
+      <p>Bhajans and Chalisa paath for Lord Hanuman.</p>
+      <button class="whatsapp-btn" onclick="sendWhatsApp('Hanuman Jagran')">Contact via whatsapp</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+
+<script>
+function sendWhatsApp(service){
+  const phone="919818688911";
+  const msg=`Hello 🙏
+I want to book *${service}*.
+Please share details & charges.`;
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,"_blank");
+}
+/* ===============================
+   HAMBURGER TOGGLE
+================================ */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+/* ===============================
+   MOBILE DROPDOWN TAP
+================================ */
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

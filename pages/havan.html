@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Havan & Yagya Services | Astro Guru</title>
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+
+  
+    /* ===============================
+       HAVAN PAGE STYLES
+    ================================ */
+
+    .havan-hero {
+      background: linear-gradient(#b80000, #6a0000),
+        url("../assets/images/havan-bg.jpg") center/cover no-repeat;
+      padding: 50px 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .havan-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .havan-hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* ABOUT HAVAN */
+    .havan-about {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .havan-about img {
+      width: 470px;
+      height: 400px;
+      border-radius: 15px;
+    }
+
+    .havan-about h2 {
+      font-size: 42px;
+      color: #b80000;
+      margin-bottom: 20px;
+    }
+
+    .havan-about p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* TYPES OF HAVAN */
+    .havan-types {
+      background: #fff6eb;
+      padding: 60px 20px;
+    }
+
+    .havan-types h2 {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 40px;
+      color: #b80000;
+    }
+
+    .havan-grid {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+
+    .havan-card {
+      background: #fff;
+      padding: 40px;
+      height: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0.5,0.5,0.5,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .havan-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .havan-card h3 {
+      color: #ff9800;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .havan-card p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* BENEFITS */
+    .havan-benefits {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .havan-benefits h2 {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #b80000;
+    }
+
+    .benefit-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .benefit-item {
+      background: #fafafa;
+      padding: 30px;
+      border-left: 5px solid #ff9800;
+      border-radius: 10px;
+    }
+
+    /* CTA */
+    .havan-cta {
+      background: linear-gradient(135deg, #b80000, #1e1d1d);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .havan-cta h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .havan-cta p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .havan-cta .cta-btn {
+      padding: 14px 35px;
+      border-radius: 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      background: #fff;
+      color: #b80000;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .havan-cta .cta-btn:hover {
+      background: #ffe5c2;
+    }
+
+    @media (max-width: 768px) {
+      .havan-hero h1 {
+        font-size: 30px;
+      }
+    }
+
+    
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 25px 20px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .footer .socials {
+      margin-top: 10px;
+    }
+
+    .footer .socials i {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .footer .socials i:hover {
+      color: #b80000;
+    }
+     /* HIDE PROFILE ICON ON MOBILE */
+@media (max-width: 768px) {
+  .profile {
+    display: none;
+  }
+}
+  </style>
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+        
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+             <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li > <a href="/pages/About_us.html">About US </a>
+         
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li > <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+  <!-- HERO -->
+  <section class="havan-hero">
+    <h1>Havan & Yagya Services</h1>
+    <p>
+      Perform sacred Vedic Havan to remove negative energies, bring peace,
+      prosperity, and divine blessings into your life.
+    </p>
+  </section>
+
+  <!-- ABOUT HAVAN -->
+  <section class="havan-about">
+    <img src="/assets/img/havan-img.png" alt="Havan Ritual">
+    <div>
+      <h2>What is Havan?</h2>
+      <p>
+        Havan (Yagya) is a powerful Vedic fire ritual performed to purify the
+        environment and attract positive cosmic energies. Sacred mantras are
+        chanted while offerings are made into the holy fire.
+      </p>
+      <p>
+        Our expert Pandits perform Havan as per authentic scriptures to ensure
+        maximum spiritual and astrological benefits.
+      </p>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="havan-types">
+    <h2>Types of Havan We Perform</h2>
+
+    <div class="havan-grid">
+      <div class="havan-card">
+        <h3>Grah Shanti Havan</h3>
+        <p>For planetary peace and removal of doshas.</p>
+      </div>
+
+      <div class="havan-card">
+        <h3>Maha Mrityunjaya Havan</h3>
+        <p>For health, long life and protection from negativity.</p>
+      </div>
+
+      <div class="havan-card">
+        <h3>Navgrah Havan</h3>
+        <p>Balancing all nine planets for success and harmony.</p>
+      </div>
+
+      <div class="havan-card">
+        <h3>Lakshmi Havan</h3>
+        <p>For wealth, abundance and financial growth.</p>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="havan-benefits">
+    <h2>Benefits of Performing Havan</h2>
+
+    <div class="benefit-list">
+      <div class="benefit-item">✔ Removes negative energies</div>
+      <div class="benefit-item">✔ Brings peace and mental clarity</div>
+      <div class="benefit-item">✔ Improves health and well-being</div>
+      <div class="benefit-item">✔ Enhances prosperity & success</div>
+      <div class="benefit-item">✔ Creates positive spiritual vibrations</div>
+      <div class="benefit-item">✔ Reduces planetary doshas</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="havan-cta">
+    <h2>Book Your Havan Today</h2>
+    <p>Performed by experienced Vedic Pandits with complete rituals</p>
+
+    <button onclick="sendWhatsApp('Havan Booking')" class="cta-btn">
+      Booking for Havan
+    </button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Spiritual Consultancy</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* GLOBAL STYLES */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    /* HERO SECTION */
+    .hero {
+  background: linear-gradient(to right, #b80000, #6a0000);
+  color: white;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.6rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ABOUT US CONTENT */
+    .about-section {
+      max-width: 1400px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-section img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  height: auto;
+  object-fit: cover;
+
+  /* Professional depth */
+  box-shadow: 
+    0 20px 40px rgba(0.5, 0.5, 0.5, 0.5),
+    0 0 0 6px rgba(184, 0.5, 0.5, 0.5);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Subtle hover effect */
+.about-section img:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 60px rgba(0, 0.5, 0.5, 0.2),
+    0 0 0 8px rgba(184, 0, 0, 0.12);
+}
+
+
+    .about-section .text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .about-section .text h2 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      color: #b80000;
+    }
+
+    .about-section .text p {
+  font-size: 1.4rem;
+  max-width: 100%;
+  line-height: 1.6;
+  color: #555;
+}
+
+.qualification-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.qualification-section .text h2 {
+  font-size: 2.5rem;
+  color: #b80000;
+  margin-bottom: 30px;
+}
+
+.qualification-section .text h3 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.qualification-section .text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .qualification-section .text h2 {
+    font-size: 1.8rem;
+  }
+  .qualification-section .text h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .qualification-section .text h2 {
+    font-size: 1.5rem;
+  }
+  .qualification-section .text h3 {
+    font-size: 1.1rem;
+  }
+}
+
+    /* MISSION / VISION CARDS */
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: #b80000;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* TEAM SECTION */
+    .team-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      font-size: 2rem;
+      color: #b80000;
+      margin-bottom: 40px;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .team-member {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-member img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .team-member h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fff;
+      margin-top: 40px;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #b80000;
+    }
+
+    .cta-section p {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+     .whatsapp-btn {
+  display: block;          /* IMPORTANT */
+  margin: 30px auto 0;     /* Centers horizontally */
+  padding: 18px 24px;
+  background: #25D366;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+    .whatsapp-btn i {
+      margin-right: 6px;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 25px 20px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .footer .socials {
+      margin-top: 10px;
+    }
+
+    .footer .socials i {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .footer .socials i:hover {
+      color: #b80000;
+    }
+
+
+    /* =========================
+   TABLET RESPONSIVE (≤ 992px)
+========================= */
+@media (max-width: 992px) {
+
+  .hero {
+    padding: 60px 20px 40px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-section img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .about-section .text {
+    align-items: center;
+  }
+
+  .about-section .text h2 {
+    font-size: 1.7rem;
+  }
+
+  .team-section h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    margin: 30px auto;
+  }
+
+  .about-section img {
+    max-width: 100%;
+  }
+
+  .about-section .text h2 {
+    font-size: 1.5rem;
+  }
+
+  .mission-vision {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 25px 15px;
+  }
+
+  .team-container {
+    gap: 20px;
+  }
+
+  .team-member img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .about-section {
+    padding: 0 15px;
+  }
+
+  .about-section .text h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-section .text p {
+    font-size: 0.95rem;
+  }
+
+  .card i {
+    font-size: 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .team-member h3 {
+    font-size: 1.1rem;
+  }
+
+  .cta-section .cta-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .footer p {
+    font-size: 0.85rem;
+  }
+}
+ /* HIDE PROFILE ICON ON MOBILE */
+@media (max-width: 768px) {
+  .profile {
+    display: none;
+  }
+}
+
+/* YOUTUBE VIDEO SECTION */
+.video-section {
+  max-width: 1200px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.video-section h2 {
+  font-size: 2.2rem;
+  color: #b80000;
+  margin-bottom: 15px;
+}
+
+.video-section p {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Responsive iframe */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .video-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .video-section p {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   STATS CTA SECTION
+========================= */
+
+.stats-cta {
+  position: relative;
+  background: url("/assets/img/cta-bg.jpg") center/cover no-repeat;
+  padding: 80px 20px;
+  color: #fff;
+}
+
+.stats-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.stats-content {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  z-index: 2;
+}
+
+.stats-content h2 {
+  font-size: 3rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.stats-content h2 span {
+  color: #fa3232;
+}
+
+.stats-content p {
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+  color: white;
+}
+
+/* ICON GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.icon-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px dotted #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.icon-circle i {
+  font-size: 2.2rem;
+  color: #fa3232;
+}
+
+.stat-box:hover .icon-circle {
+  transform: scale(1.08);
+}
+
+.stat-box h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .stats-content h2 {
+    font-size: 2rem;
+  }
+
+  .stats-content p {
+    font-size: 1rem;
+  }
+
+  .icon-circle {
+    width: 75px;
+    height: 75px;
+  }
+
+  .icon-circle i {
+    font-size: 1.8rem;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+        
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+             <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li > <a href="/pages/About_us.html">About US </a>
+         
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li > <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>About Us</h1>
+    <p>We provide authentic spiritual guidance and remedies to help you lead a harmonious life.</p>
+  </section>
+
+  <!-- ABOUT US CONTENT -->
+  <section class="about-section">
+    <img src="/assets/img/myimg.webp" alt="About Us Image">
+    <div class="text">
+      <h2>Who We Are</h2>
+      <p>Our spiritual consultancy is dedicated to helping individuals find balance and peace through personalized guidance.I am a practicing Astrologer, MahaVastu Consultant and Grand Master Numerologist With 23 years of experience, our experts specialize in Vedic rituals, dosha nivaran, and holistic solutions for spiritual well-being.</p>
+      <p>The Vastu remedies provided by me involve a constant effort to treat a space without demolition and optimize it with colour therapy, space surgery and decorative features.</p>
+      <p>We believe in creating a supportive environment where everyone can receive guidance tailored to their unique life situations. Our mission is to empower people with knowledge and effective remedies that improve mental, emotional, and spiritual health.</p>
+    </div>
+  </section>
+
+  <!-- QUALIFICATIONS & ASSOCIATIONS -->
+<section class="qualification-section">
+  <div class="text">
+    <h2>Our Qualifications & Associations</h2>
+
+    <h3>Qualification</h3>
+    <ul>
+      <li>Jyotish Acharya - BHARTIYA VIVIDYA BHAWAN</li>
+      <li>Awarded 2nd Position in Jyotish Acharya Degree from ICAS Chennai, East Delhi Chapter (2011)</li>
+      <li>MahaVastu Consultant</li>
+      <li>Grand Master In Numerology</li>
+    </ul>
+
+    <h3>Association</h3>
+    <ul>
+      <li>Business Network International (American franchise)</li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- MISSION & VISION -->
+  <section class="mission-vision">
+    <div class="card">
+      <i class="fa-solid fa-bullseye"></i>
+      <h3>Our Mission</h3>
+      <p>To provide authentic spiritual guidance and dosha remedies that bring peace and balance to our clients’ lives.</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-eye"></i>
+      <h3>Our Vision</h3>
+      <p>To be recognized as a trusted spiritual consultancy that empowers individuals with knowledge, awareness, and positive transformation.</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-heart"></i>
+      <h3>Our Values</h3>
+      <p>Integrity, authenticity, empathy, and dedication to our clients’ spiritual and personal growth.</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section">
+    <h2>Meet Our Experts</h2>
+    <div class="team-container">
+      <div class="team-member">
+        <img src="/assets/img/OIP (2).jpg" alt="Team Member 1">
+        <h3>Ravi Sharma</h3>
+        <p>Spiritual Consultant & Dosha Specialist</p>
+      </div>
+
+      <div class="team-member">
+        <img src="/assets/img/OIP (1).jpg" alt="Team Member 2">
+        <h3>sanjay Verma</h3>
+        <p>Vedic Ritual Expert</p>
+      </div>
+
+      <div class="team-member">
+        <img src="/assets/img/OIP (3).jpg" alt="Team Member 3" height="200px">
+        <h3>Arjun Kapoor</h3>
+        <p>Katha & Spiritual Storytelling</p>
+      </div>
+
+      <div class="team-member">
+        <img src="/assets/img/OIP.jpg" alt="Team Member 4" height="200px">
+        <h3>Sandeep Rao</h3>
+        <p>Astrology & Consultation Expert</p>
+      </div>
+    </div>
+  </section>
+
+<!-- YOUTUBE VIDEO SECTION -->
+<section class="video-section">
+  <h2>Watch Our Spiritual Guidance</h2>
+  <p>Experience our authentic Vedic wisdom and spiritual solutions through our video.</p>
+
+  <div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/5R_FIov9TnA"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<section class="stats-cta">
+  <div class="stats-overlay"></div>
+
+  <div class="stats-content">
+    <h2>Now <span>We Have</span></h2>
+
+    <p>
+      Astrology is not just about predictions — it's about understanding the deeper
+      patterns of your life. While many sites offer general insights, we bring you
+      personalized guidance rooted in ancient Vedic wisdom.
+    </p>
+
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <div class="icon-circle">
+          <i class="fa-solid fa-building"></i>
+        </div>
+        <h4>Offices Worldwide</h4>
+      </div>
+
+      <div class="stat-box">
+        <div class="icon-circle">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h4>Skilled Astrologers</h4>
+      </div>
+
+      <div class="stat-box">
+        <div class="icon-circle">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <h4>Countries Covered</h4>
+      </div>
+
+      <div class="stat-box">
+        <div class="icon-circle">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <h4>Years Of Experience</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Need Personalized Guidance?</h2>
+    <p>Contact us today to get tailored spiritual advice and remedies for your life.</p>
+    <button class="whatsapp-btn"
+        onclick="sendWhatsApp('Personal Guidance')">
+        <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+      </button>
+  </section>
+
+  
+  <!-- FOOTER -->
+  <footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+
+</body>
+<script>
+
+  function sendWhatsApp(service) {
+      const phoneNumber = "919818688911";
+      const message = `Hello 🙏
+I would like to book *${service}*.
+Please share available slots.`;
+
+      window.open(
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+        "_blank"
+      );
+    }
+    
+/* ===============================
+   HAMBURGER TOGGLE
+================================ */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+/* ===============================
+   MOBILE DROPDOWN TAP
+================================ */
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("active");
+    }
+  });
+});
+</script>
+</html>

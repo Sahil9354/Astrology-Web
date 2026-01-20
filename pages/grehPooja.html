@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grah Pooja Service | Astro Guru</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================= GLOBAL ================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #605e5e2e;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+  background: linear-gradient(to right, #b80000, #6a0000);
+  color: white;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+    .hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      opacity: 0.95;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    /* ================= INTRO ================= */
+    .intro {
+      background:#605e5e2e;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .intro img {
+      width: 80%;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .intro h2 {
+      color: #b80000;
+      margin-bottom: 50px;
+      font-size: 2.3rem;
+    }
+
+    .intro p {
+      color: #1c0505e4;
+      margin-bottom: 32px;
+      font-size: 20px;
+    }
+
+    /* ================= BENEFITS ================= */
+    .benefits {
+      background: #605e5e2e;
+      text-align: center;
+    }
+
+    .benefits h2 {
+      color: #b80000;
+      margin-bottom: 40px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .benefit {
+      background: #605e5e2e;
+      padding: 30px 20px;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .benefit:hover {
+      transform: translateY(-6px);
+    }
+
+    .benefit i {
+      font-size: 2.5rem;
+      color: #b80000;
+      margin-bottom: 15px;
+    }
+
+    /* ================= TYPES ================= */
+    
+    .types h2 {
+      text-align: center;
+      color: #b80000;
+      margin-bottom: 40px;
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .type {
+      background: #605e5e2e;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 8px 22px ;
+    }
+
+    .type h3 {
+      margin-bottom: 8px;
+    }
+
+    /* ================= PROCESS ================= */
+    .process {
+      background:#605e5e2e;
+    }
+
+    .process h2 {
+      text-align: center;
+      color: #b80000;
+      margin-bottom: 40px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .step {
+      background: #605e5e2e;
+      padding: 28px;
+      border-radius: 14px;
+      border-left: 6px solid #b80000;
+    }
+
+    .step span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #b80000;
+    }
+
+    /* ================= WHY US ================= */
+    .why {
+      background: #605e5e2e;
+    }
+
+    .why h2 {
+      text-align: center;
+      color: #b80000;
+      margin-bottom: 30px;
+    }
+
+.why ul {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.why li {
+  display: flex;
+  justify-content: center;   /* 🔑 CENTER CONTENT */
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #555;
+  line-height: 1.6;
+  text-align: left;          /* keeps text readable */
+}
+
+.why li::before {
+  content: "✔";
+  color: #25D366;
+  font-weight: bold;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+
+    /* ================= CTA ================= */
+    .cta {
+      background: linear-gradient(135deg, #e4e1e1ee);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .cta a {
+      background: #25D366;
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 10px;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .cta a:hover {
+      background: #1ebe5d;
+    }
+
+    
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .intro img {
+        margin: auto;
+        width: 240px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 70px 15px;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+     /* HIDE PROFILE ICON ON MOBILE */
+@media (max-width: 768px) {
+  .profile {
+    display: none;
+  }
+}
+  </style>
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+        
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+             <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li > <a href="/pages/About_us.html">About US </a>
+         
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li > <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+<!-- HERO -->
+<section class="hero">
+  <h1>Grah Pooja </h1>
+  <p>Powerful Vedic rituals to balance planetary energies and remove obstacles from your life</p>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container intro-grid">
+    <img src="/assets/img/greh-pooja.png" alt="Grah Pooja">
+
+    <div>
+      <h2>About Grah Pooja</h2>
+      <p>
+        Grah Pooja is a sacred Vedic ritual performed to pacify malefic planets
+        and strengthen benefic planetary influences in your horoscope.
+      </p>
+      <p>
+        It helps resolve problems related to career, marriage, health,
+        finance, and mental peace caused by planetary doshas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="container">
+    <h2>Benefits of Grah Pooja</h2>
+
+    <div class="benefit-grid">
+      <div class="benefit">
+        <i class="fa-solid fa-sun"></i>
+        <h3>Planetary Balance</h3>
+        <p>Reduces negative planetary effects.</p>
+      </div>
+
+      <div class="benefit">
+        <i class="fa-solid fa-heart"></i>
+        <h3>Mental Peace</h3>
+        <p>Removes stress and emotional instability.</p>
+      </div>
+
+      <div class="benefit">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3>Career Growth</h3>
+        <p>Removes obstacles in job & business.</p>
+      </div>
+
+      <div class="benefit">
+        <i class="fa-solid fa-house"></i>
+        <h3>Family Harmony</h3>
+        <p>Improves relationships and happiness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section class="types">
+  <div class="container">
+    <h2>Types of Grah Pooja</h2>
+
+    <div class="type-grid">
+      <div class="type">
+        <h3>Navgrah Shanti Pooja</h3>
+        <p>Balancing all nine planets.</p>
+      </div>
+
+      <div class="type">
+        <h3>Shani Grah Shanti</h3>
+        <p>Relief from Shani dosh & sade sati.</p>
+      </div>
+
+      <div class="type">
+        <h3>Rahu–Ketu Shanti</h3>
+        <p>Removes shadow planet afflictions.</p>
+      </div>
+
+      <div class="type">
+        <h3>Chandra Grah Shanti</h3>
+        <p>Improves emotional stability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <h2>How We Perform Grah Pooja</h2>
+
+    <div class="steps">
+      <div class="step">
+        <span>1</span>
+        <p>Kundli analysis by expert astrologer</p>
+      </div>
+
+      <div class="step">
+        <span>2</span>
+        <p>Selection of auspicious muhurat</p>
+      </div>
+
+      <div class="step">
+        <span>3</span>
+        <p>Vedic mantra chanting & havan</p>
+      </div>
+
+      <div class="step">
+        <span>4</span>
+        <p>Remedies & post-pooja guidance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <h2>Why Choose Astro Guru?</h2>
+
+    <ul>
+      <li>Experienced Vedic Pandits</li>
+      <li>100% Authentic Rituals</li>
+      <li>Personalized Horoscope-based Pooja</li>
+      <li>Affordable & Transparent Pricing</li>
+      <li>Online & Offline Pooja Available</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Book Your Grah Pooja Now</h2>
+  <p>Get personalized guidance and the best muhurat</p>
+
+  <a href="https://wa.me/919818688911" target="_blank">
+    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+
+</body>
+<script>
+
+  function sendWhatsApp(service) {
+      const phoneNumber = "919818688911";
+      const message = `Hello 🙏
+I would like to book *${service}*.
+Please share available slots.`;
+
+      window.open(
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+        "_blank"
+      );
+    }
+  
+/* ===============================
+   HAMBURGER TOGGLE
+================================ */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+/* ===============================
+   MOBILE DROPDOWN TAP
+================================ */
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("active");
+    }
+  });
+});
+</script>
+</html>

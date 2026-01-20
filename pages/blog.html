@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Astro Guru</title>
+  <meta name="description" content="Read spiritual blogs, astrology tips, pooja rituals, and vastu guidance by Astro Guru." />
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================= GLOBAL ================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      background: linear-gradient(135deg, #7b1fa2, #4a148c);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* ================= LAYOUT ================= */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ================= BLOG POSTS ================= */
+    .blog-post {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    .blog-content h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #4a148c;
+    }
+
+    .blog-meta {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .blog-meta i {
+      margin-right: 5px;
+      color: #7b1fa2;
+    }
+
+    .blog-content p {
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #7b1fa2;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+
+    .read-more:hover {
+      background: #4a148c;
+    }
+
+    /* ================= SIDEBAR ================= */
+    .sidebar {
+      position: sticky;
+      top: 20px;
+    }
+
+    .sidebar-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-box h3 {
+      margin-bottom: 15px;
+      color: #4a148c;
+      font-size: 1.2rem;
+    }
+
+    .categories ul,
+    .recent-posts ul {
+      list-style: none;
+    }
+
+    .categories li,
+    .recent-posts li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .categories li i,
+    .recent-posts li i {
+      color: #7b1fa2;
+      margin-right: 8px;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #2c2c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Astro Guru Blog</h1>
+    <p>Astrology • Pooja • Vastu • Spiritual Guidance</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <section class="container">
+
+    <!-- BLOG LIST -->
+    <div>
+      <article class="blog-post">
+        <img src="/assets/img/5cb3e4f9-aa73-447e-96d1-e5e52d2e0e02-md.jpeg" alt="Grah Pooja" />
+        <div class="blog-content">
+          <h2>Importance of Grah Pooja in Astrology</h2>
+          <div class="blog-meta">
+            <span><i class="fa fa-calendar"></i> 10 Jan 2026</span> &nbsp; | &nbsp;
+            <span><i class="fa fa-user"></i> Astro Guru</span>
+          </div>
+          <p>
+            Grah Pooja helps in reducing the negative effects of planets and
+            brings peace, prosperity, and success in life. Learn why it is
+            important and when it should be performed.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-post">
+        <img src="/assets/img/vastu-yantra-golden.jpg" alt="Vastu Tips" />
+        <div class="blog-content">
+          <h2>Top 7 Vastu Tips for a Peaceful Home</h2>
+          <div class="blog-meta">
+            <span><i class="fa fa-calendar"></i> 05 Jan 2026</span> &nbsp; | &nbsp;
+            <span><i class="fa fa-user"></i> Astro Guru</span>
+          </div>
+          <p>
+            Vastu Shastra plays an important role in balancing energies at home.
+            Here are 7 simple and effective vastu tips to attract positivity
+            and happiness.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-post">
+        <img src="/assets/img/bhajan-kirtan.jpg" alt="Horoscope" />
+        <div class="blog-content">
+          <h2>How Daily Horoscope Impacts Your Decisions</h2>
+          <div class="blog-meta">
+            <span><i class="fa fa-calendar"></i> 01 Jan 2026</span> &nbsp; | &nbsp;
+            <span><i class="fa fa-user"></i> Astro Guru</span>
+          </div>
+          <p>
+            Daily horoscope provides insights into planetary movements and
+            helps you make better decisions in career, love, and health.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-box categories">
+        <h3>Categories</h3>
+        <ul>
+          <li><i class="fa fa-star"></i> Astrology</li>
+          <li><i class="fa fa-om"></i> Pooja & Rituals</li>
+          <li><i class="fa fa-compass"></i> Vastu Shastra</li>
+          <li><i class="fa fa-heart"></i> Horoscope</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box recent-posts">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li><i class="fa fa-angle-right"></i> Benefits of Rudraksha</li>
+          <li><i class="fa fa-angle-right"></i> Manglik Dosha Remedies</li>
+          <li><i class="fa fa-angle-right"></i> Best Days for Pooja</li>
+        </ul>
+      </div>
+    </aside>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Astro Guru. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

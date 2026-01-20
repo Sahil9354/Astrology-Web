@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Spiritual Consultancy</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===============================
+                    HERO section
+           ================================ */
+    .hero {
+      height: 120px;
+      background: linear-gradient(to right, #b80000, #6a0000);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-track {
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    /* TEXT */
+    .hero-text {
+      display: inline-flex;
+      white-space: nowrap;
+      font-size: 26px;
+      font-weight: 600;
+      color: #fff;
+      /* 👇 REAL FIX IS HERE */
+      transform: translateX(100vw);
+      animation: slideAcross 16s linear infinite;
+    }
+
+    .hero-text span {
+      display: inline-block;
+    }
+
+    /* ===============================
+   CONTACT PAGE
+================================ */
+    .contact-page {
+      max-width: 1400px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-header h1 {
+      font-size: 3rem;
+      color: #6a0000;
+    }
+
+    .contact-header p {
+      color: #555;
+      margin-top: 10px;
+      font-size: 1.4rem;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    /* ===============================
+   CONTACT INFO
+================================ */
+    .contact-info {
+      background: linear-gradient(to bottom, #b80000, #6a0000);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 100px;
+    }
+
+    .contact-info p {
+      margin: 15px 0;
+      font-size: 20px;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: #d8ca06;
+    }
+
+    .whatsapp-box {
+      margin-top: 25px;
+    }
+
+    .whatsapp-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .whatsapp-box a:hover {
+      background: #1ebe5d;
+    }
+
+    /* ===============================
+   CONTACT FORM
+================================ */
+    .contact-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      color: #6a0000;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .contact-form textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 14px;
+      background: #6a0000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: #b80000;
+    }
+
+    /* ===============================
+   RESPONSIVE
+================================ */
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* HIDE PROFILE ICON ON MOBILE */
+    @media (max-width: 768px) {
+      .profile {
+        display: none;
+      }
+    }
+
+    .contact-info,
+    .contact-form {
+      min-height: 590px;
+      /* increase card height */
+    }
+
+    /* ===============================
+   LOCATION MAP
+================================ */
+.location-map {
+  padding: 60px 20px;
+  background: #f9f7f3;
+}
+
+.map-container {
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.location-map h2 {
+  font-size: 42px;
+  color: #6a0000;
+  margin-bottom: 10px;
+}
+
+.location-map p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.map-frame {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+   <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+            <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li> <a href="/pages/About_us.html">About US </a>
+
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li> <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-track">
+      <div class="hero-text">Contact Us: We Are Here For Your Best guidance...</div>
+    </div>
+  </section>
+
+  <!-- CONTACT PAGE -->
+  <section class="contact-page">
+
+    <div class="contact-header">
+      <h1>Get in Touch</h1>
+      <p>Have questions about your future or want to book a personal astrology session? We’re here to help you connect
+        with the cosmic guidance you need. Reach out anytime — your journey to clarity begins now.</p>
+    </div>
+
+    <div class="contact-wrapper">
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        <h2 style="font-size: 40px;">Contact Information</h2>
+
+        <p><i class="fa-solid fa-location-dot"></i> 24 ,Kailash Apartment-45,IP Extension, Delhi-110092</p>
+        <p><i class="fa-solid fa-phone"></i> +91 9818688911, 8527561356</p>
+        <p><i class="fa-solid fa-envelope"></i> shaifalinmastu@gmail.com</p>
+
+        <div class="whatsapp-box">
+          <a href="https://wa.me/919315691690" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <form class="contact-form" id="contactForm">
+
+        <h2>Send Enquiry</h2>
+
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Email Address">
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+
+        <select id="service">
+          <option selected disabled>Select Service</option>
+          <option>Consultation</option>
+          <option>Mangal Dosha Nivaran</option>
+          <option>Kaal Sarp Dosha Puja</option>
+          <option>Pitra Dosha Shanti</option>
+          <option>Katha Vachan</option>
+        </select>
+
+        <textarea id="message" placeholder="Write your message..."></textarea>
+
+
+        <button type="submit">Send on WhatsApp</button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- LOCATION MAP -->
+<section class="location-map">
+  <div class="map-container">
+
+    <h2>Our Location</h2>
+    <p>
+      Visit us at <strong>24, Kailash Apartment-45, IP Extension, Delhi – 110092</strong>
+    </p>
+
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps?q=24%20Kailash%20Apartment-45%2C%20IP%20Extension%2C%20Delhi%20110092&output=embed"
+        width="100%"
+        height="500"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+
+  <footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+
+</body>
+<script>
+  
+  function sendWhatsApp(service) {
+      const phoneNumber = "919818688911";
+      const message = `Hello 🙏
+I would like to book *${service}*.
+Please share available slots.`;
+
+      window.open(
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+        "_blank"
+      );
+    }
+
+  /* ===============================
+ HAMBURGER TOGGLE
+================================ */
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  /* ===============================
+     MOBILE DROPDOWN TAP
+  ================================ */
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        link.parentElement.classList.toggle("active");
+      }
+    });
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappNumber = "919818688911"; // your WhatsApp number
+
+    const whatsappMessage =
+      `New Enquiry from Website:
+-------------------------
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Service: ${service}
+Message: ${message}`;
+
+    const whatsappURL =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+
+</script>
+
+</html>

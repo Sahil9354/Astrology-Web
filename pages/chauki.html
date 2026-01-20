@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mata Ki Chowki | Spiritual Services</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* RESET */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+
+    body { background: #faf7f2; color: #333; line-height: 1.6; }
+
+    
+    /* HERO */
+    .hero {
+  background: linear-gradient(to right, #b80000, #6a0000);
+  color: white;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+    .hero h1 { font-size: 45px; margin-bottom: 10px; }
+    .hero p { max-width: 700px; margin: auto; font-size: 20px; }
+
+    /* SECTION */
+    .section { padding: 60px 8%; }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about img { width: 60%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0.5,.5); margin-left: 20%;}
+    .about h2 { color: #6a0000; margin-bottom: 16px; font-size: 45px;}
+    .about p { margin-bottom: 10px; font-size: 15px;}
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .feature-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0.5,0.5,0.5,.5);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,.15); }
+    .feature-card i { font-size: 36px; color: #c62828; margin-bottom: 12px; }
+    .feature-card h3 { margin-bottom: 8px; }
+
+    /* TYPES */
+    .types { background: #fff5f5; }
+    .types h2 { text-align: center; color: #6a0000; margin-bottom: 40px; font-size: 40px; }
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .type-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0.5,0.5,0.5,.5);
+    }
+    .type-card img { width: 100%; height: 200px; object-fit: cover; }
+    .type-card .content { padding: 20px; }
+    .type-card h3 { color: #c62828; margin-bottom: 8px; font-size: 20px; }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #b80000, #6a0000);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .cta h2 { margin-bottom: 10px; font-size: 40px; }
+    .cta p { margin-bottom: 20px; }
+    
+    
+    .cta-btn {
+      padding: 14px 35px;
+      border-radius: 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      background: #fff;
+      color: #b80000;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+     .cta-btn:hover {
+      background: #97938e;
+    }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .about { grid-template-columns: 1fr; }
+      .features, .type-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .features, .type-grid { grid-template-columns: 1fr; }
+    }
+
+     
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 25px 20px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .footer .socials {
+      margin-top: 10px;
+    }
+
+    .footer .socials i {
+      margin: 0 10px;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .footer .socials i:hover {
+      color: #b80000;
+    }
+
+     /* HIDE PROFILE ICON ON MOBILE */
+@media (max-width: 768px) {
+  .profile {
+    display: none;
+  }
+}
+/* FORCE 1:1 IMAGE RATIO FOR TYPE CARDS */
+.type-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* 1:1 square ratio */
+  height: auto;
+  object-fit: cover;
+}
+
+/* ENSURE CARD HEIGHT ADJUSTS PROPERLY */
+.type-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.type-card .content {
+  flex-grow: 1;
+}
+
+  </style>
+</head>
+<body>
+ <header class="navbar">
+    <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+        
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+             <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li > <a href="/pages/About_us.html">About US </a>
+         
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li > <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Mata Ki Chowki</h1>
+    <p>A sacred devotional gathering to invoke the blessings of Maa Durga with bhajans, kirtan, and spiritual ambience.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="about">
+      <img src="/assets/img/Matakichauki.png" alt="Mata Ki Chowki">
+      <div>
+        <h2>About: Mata Ki Chowki</h2>
+        <p>Mata Ki Chowki is a sacred and devotional ceremony dedicated to Maa Durga, organized to seek her divine blessings for peace, prosperity, good health, and happiness in life. It is one of the most auspicious spiritual gatherings in Hindu tradition and is performed with complete श्रद्धा (faith) and भक्ति (devotion).</p>
+<p>During the Chowki, soulful bhajans, kirtans, and shlokas are sung by experienced bhajan mandli, creating a powerful spiritual environment filled with positive energy. The atmosphere becomes deeply devotional as devotees immerse themselves in the naam-smaran and glorification of Maa.</p>
+<p>Mata Ki Chowki can be organized on special occasions such as <strong>Navratri, birthdays, anniversaries, griha pravesh, mundan, or for fulfillment of wishes</strong>. Proper pooja vidhi, aarti, and prasad distribution are carried out as per traditional rituals to ensure spiritual sanctity.</p>
+<p>Whether organized at home, in a society, or at a large venue, Mata Ki Chowki brings families and communities together, spreading devotion, harmony, and divine blessings of Maa Durga.</p> </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <i class="fa-solid fa-om"></i>
+        <h3>Pure Devotion</h3>
+        <p>Authentic bhajans and mantras performed with complete श्रद्धा.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-music"></i>
+        <h3>Live Bhajan Mandli</h3>
+        <p>Experienced singers creating a powerful spiritual atmosphere.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-hands-praying"></i>
+        <h3>Complete Rituals</h3>
+        <p>Aarti, prasad distribution, and proper pooja vidhi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="section types">
+    <h2>Types of Mata Ki Chowki</h2>
+    <div class="type-grid">
+      <div class="type-card">
+        <img src="/assets/img/simple-chowki.png" alt="Simple Chowki">
+        <div class="content">
+          <h3>Simple Chowki</h3>
+          <p>Ideal for homes with minimal setup and devotional focus.</p>
+        </div>
+      </div>
+      <div class="type-card">
+        <img src="/assets/img/Grand-chowki.png" alt="Grand Chowki">
+        <div class="content">
+          <h3>Grand Chowki</h3>
+          <p>Large gathering with stage decoration and sound system.</p>
+        </div>
+      </div>
+      <div class="type-card">
+        <img src="/assets/img/navratri-special.jpeg" alt="Navratri Chowki">
+        <div class="content">
+          <h3>Navratri Special</h3>
+          <p>Special chowki organized during Navratri celebrations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Book Mata Ki Chowki</h2>
+    <p>Invite divine blessings into your home with a beautifully organized Chowki.</p>
+    <button onclick="sendWhatsApp('Mata ki Chowki Booking')" class="cta-btn">
+      Booking for Chauki
+    </button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+</body>
+<script src="../js/main.js"></script>
+</html>

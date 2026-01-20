@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kirtan | Divine Bhajan & Kirtan Services</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    
+    /* ===============================
+       SINGLE COLOR THEME (Your Red)
+    =============================== */
+    :root {
+      --primary: #8b1c1c;   /* Deep Red */
+      --bg: #fff8f2;
+      --dark: #2b2b2b;
+      --light: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", Arial, sans-serif; }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* ===============================
+       HERO
+    =============================== */
+    .hero {
+  background: linear-gradient(to right, #b80000, #6a0000);
+  color: white;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      margin-bottom: 40px;
+      font-size: 22px;
+    }
+
+    /* ===============================
+       COMMON SECTION
+    =============================== */
+    .section {
+      padding: 55px 12%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-size: 50px;
+      color: var(--primary);
+    }
+
+    /* ===============================
+       ABOUT KIRTAN
+    =============================== */
+    .about {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr; /* IMAGE MADE MEDIUM */
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 90%;
+      max-height: 550px;      /* MEDIUM HEIGHT */
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.18);
+    }
+
+    .about h3 {
+      font-size: 40px;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .about p {
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    /* ===============================
+       FEATURES
+    =============================== */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 85px;
+    }
+
+    .feature-card {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 4px solid var(--primary);
+      box-shadow: 0 12px 30px rgba(0.5,0.5,0.5,.5);
+      transition: all .35s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .feature-card h4 {
+      font-size: 25px;
+    }
+    .feature-card p {
+      font-size: 18px;
+    }
+
+    .feature-card i {
+      font-size: 38px;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    /* ===============================
+       TYPES OF KIRTAN
+    =============================== */
+    .types {
+      background: #fff;
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .type-card {
+      background: var(--light);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0.5,0.5,0.5,.5);
+    }
+
+    .type-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .type-card h4 {
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .type-card p{
+      font-size: 18px;
+    }
+    .type-card .content {
+      padding: 22px;
+    }
+
+    /* ===============================
+       CTA
+    =============================== */
+    .cta {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .cta p{
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+   .cta-btn {
+      padding: 20px 35px;
+      border-radius: 30px;
+      border: none;
+      font-size: 19px;
+      cursor: pointer;
+      background: #fff;
+      color: #b80000;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+     .cta-btn:hover {
+      background: #97938e;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #fff;
+      color: var(--primary);
+      padding: 15px 38px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ===============================
+       RESPONSIVE
+    =============================== */
+    @media (max-width: 900px) {
+      .about { grid-template-columns: 1fr; }
+      .features, .type-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .features, .type-grid { grid-template-columns: 1fr; }
+    }
+
+     
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 25px 20px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .footer .socials {
+      margin-top: 10px;
+    }
+
+    .footer .socials i {
+      margin: 0 10px;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .footer .socials i:hover {
+      color: #b80000;
+    }
+
+    /* HIDE PROFILE ICON ON MOBILE */
+@media (max-width: 768px) {
+  .profile {
+    display: none;
+  }
+}
+/* FORCE 1:1 IMAGE RATIO FOR TYPE CARDS */
+.type-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* 1:1 square ratio */
+  height: auto;
+  object-fit: cover;
+}
+
+/* ENSURE CARD HEIGHT ADJUSTS PROPERLY */
+.type-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.type-card .content {
+  flex-grow: 1;
+}
+
+  </style>
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+        
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+             <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li > <a href="/pages/About_us.html">About US </a>
+         
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li > <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+  <section class="hero">
+    <h1>Divine Kirtan</h1>
+    <p>Experience the power of Naam Sankirtan with soulful bhajans and devotion.</p>
+  </section>
+
+  <section class="section">
+    <div class="about">
+      <img src="/assets/img/kirtan.jpeg">
+      <div>
+        <h3>About Kirtan</h3>
+        <p>Kirtan is a sacred devotional practice where the names and glories of God are sung collectively with music, rhythm, and devotion. It is a powerful way to purify the mind and create spiritual upliftment.</p>
+        <p>Our kirtan services include traditional bhajans, naam-sankirtan, and interactive devotional singing that fills the environment with divine vibrations.</p>
+        <p>Kirtan can be organized for temples, homes, satsangs, festivals, spiritual gatherings, and special religious occasions.</p>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <i class="fa-solid fa-drum"></i>
+        <h4>Live Instruments</h4>
+        <p>Dholak, harmonium, manjira support.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-music"></i>
+        <h4>Devotional Singing</h4>
+        <p>Soulful and engaging bhajans.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-hands-praying"></i>
+        <h4>Spiritual Ambience</h4>
+        <p>Pure devotional environment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section types">
+    <div class="section-title">
+      <h2>Types of Kirtan</h2>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-card">
+        <img src="/assets/img/naam-sankirtan.png">
+        <div class="content">
+          <h4>Naam Sankirtan</h4>
+          <p>Rhythmic chanting of divine names.</p>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <img src="/assets/img/bhajan-kirtan.jpg">
+        <div class="content">
+          <h4>Bhajan Kirtan</h4>
+          <p>Traditional melodious bhajans.</p>
+        </div>
+      </div>
+
+      <div class="type-card">
+        <img src="/assets/img/ferstival-kirtan.jpg">
+        <div class="content">
+          <h4>Festival Kirtan</h4>
+          <p>Special arrangements for festivals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Book Divine Kirtan</h2>
+    <p>Bring devotion and positivity to your event.</p>
+    <button onclick="sendWhatsApp('Booking for Kirtan')" class="cta-btn">
+      Booking for Kirtan
+    </button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+
+</body>
+<script src="../js/main.js"></script>
+</html>

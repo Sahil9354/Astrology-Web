@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards Page</title>
+    
+  <link rel="stylesheet" href="/css/style.css" />
+    
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+        
+
+        /* HERO SECTION */
+        .hero {
+            height: 120px;
+            background: linear-gradient(to right, #b80000, #6a0000);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .hero-track {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero-text {
+            white-space: nowrap;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            transform: translateX(100vw);
+            animation: slideAcross 16s linear infinite;
+        }
+
+        @keyframes slideAcross {
+            from {
+                transform: translateX(100vw);
+            }
+            to {
+                transform: translateX(-120%);
+            }
+        }
+
+        /* CARD CONTAINER */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 30px 15px;
+        }
+
+        /* CARD */
+        .card {
+            flex: 0 0 calc(25% - 20px); /* 4 cards per row */
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            margin: 12px 0 8px;
+            font-size: 20px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-btn {
+            display: block;
+            margin-top: 15px;
+            padding: 10px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            outline: none;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+        }
+
+        /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 40px;
+    }
+
+        /* TABLET VIEW */
+        @media (max-width: 992px) {
+            .card {
+                flex: 0 0 calc(50% - 20px); /* 2 cards per row */
+            }
+        }
+
+        /* MOBILE VIEW */
+        @media (max-width: 576px) {
+            .hero-text {
+                font-size: 18px;
+            }
+
+            .card {
+                flex: 0 0 100%; /* 1 card per row */
+            }
+
+            .card img {
+                height: 220px;
+            }
+        }
+        
+
+    </style>
+</head>
+
+<body>
+ <header class="navbar">
+    <div class="logo">
+  <a href="/index.html">
+    <img src="/assets/img/icon3.jpeg" alt="Astro Guru Logo">
+  </a>
+</div>
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="menu">
+        
+        <li><a href="/index.html">Home</a></li>
+        <li class="dropdown"> <a href="#">Consultancy <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+            <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"> <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/page1.html">Dosh Nivaran</a></li>
+            <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+             <li><a href="/pages/page3.html">Katha Vachan</a></li>
+            <li><a href="/pages/page4.html">Pooja & Paath</a></li>
+
+          </ul>
+        </li>
+        <li > <a href="/pages/About_us.html">About US </a>
+         
+        </li>
+        <li class="dropdown"> <a href="/pages/page4.html">Pooja & Paath <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/grehPooja.html">Greh Pooja</a></li>
+            <li><a href="/pages/havan.html">Havan</a></li>
+            <li><a href="/pages/jagran.html">Jagran</a></li>
+            <li><a href="/pages/chauki.html">Mata ki Chauki</a></li>
+            <li><a href="/pages/kirtan.html">Kirtan</a></li>
+          </ul>
+        </li>
+        <li > <a href="/pages/drop5contact.html">Contact </a>
+        </li>
+
+        <button onclick="sendWhatsApp('General Enquiry')" class="chat-btn">
+          Chat Now
+        </button>
+      </ul>
+    </nav>
+    <div class="profile"> <i class="fa-solid fa-user"></i> </div>
+  </header>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-track">
+        <div class="hero-text">
+            Welcome To Our Website Namastu.. Your Gateway To Vedic Astrology Services!
+        </div>
+    </div>
+</section>
+
+<!-- CARDS -->
+<div class="container">
+
+    <div class="card">
+        <img src="/assets/img/mangal-dosh.jpeg" alt="">
+        <h2>Mangal Dosh Nivaran </h2>
+        <p>Remedies for Mars affliction.</p>
+        <button class="whatsapp-btn" onclick="sendWhatsApp('Mangal Dosh Nivaran')">
+            Contact via WhatsApp
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="/assets/img/grah-shanti-puja.jpg" alt="">
+        <h2>Kaal Sarp Dosh Puja</h2>
+        <p>Remedies for serpent positioning.</p>
+        <button class="whatsapp-btn" onclick="sendWhatsApp('Kaal Sarp Dosh Puja')">
+            Contact via WhatsApp
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="/assets/img/pitra-dosh.jpeg" alt="">
+        <h2>Pitra Dosh Shanti</h2>
+        <p>Family peace and prosperity.</p>
+        <button class="whatsapp-btn" onclick="sendWhatsApp('Pitra Dosh Shanti')">
+            Contact via WhatsApp
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="/assets/img/grah-dosh.jpeg" alt="">
+        <h2>Grahan Dosh Nivaran</h2>
+        <p>Eclipse-related affliction removal.</p>
+        <button class="whatsapp-btn" onclick="sendWhatsApp('Grahan Dosh Nivaran')">
+            Contact via WhatsApp
+        </button>
+    </div>
+
+    <!-- ADD MORE CARDS HERE (AUTO NEXT LINE) -->
+    <div class="card">
+        <img src="/assets/img/shani-dosh.jpeg" alt="">
+        <h2>Shani Dosh Remedy</h2>
+        <p>Saturn affliction pacification.</p>
+        <button class="whatsapp-btn" onclick="sendWhatsApp('Shani Dosh Remedy')">
+            Contact via WhatsApp
+        </button>
+    </div>
+     <!-- ADD MORE CARDS HERE (AUTO NEXT LINE) -->
+    <div class="card">
+        <img src="/assets/img/rahu ketu.jpeg" alt="">
+        <h2>Rahu-Ketu Shanti</h2>
+        <p>Shadow planet peace rituals.</p>
+        <button class="whatsapp-btn" onclick="sendWhatsApp('Rahu-Ketu Shanti')">
+            Contact via WhatsApp
+        </button>
+    </div>
+     
+
+</div>
+<!-- FOOTER -->
+  <footer class="astro-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col">
+      <h3>Namastu</h3>
+      <p>
+        Authentic Vedic astrology guidance for life, career, marriage,
+        health and spiritual peace.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/About_us.html">About US</a></li>
+        <li><a href="/pages/personal_guidance.html">Personal Consultation</a></li>
+        <li><a href="/pages/online_guidance.html">Online Guidance</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/pages/page1.html">Consultation & Dosh Nivaran</a></li>
+        <li><a href="/pages/page2.html">Yantra, Mala & Gemstones</a></li>
+        <li><a href="/pages/page4.html">Pooja Paath</a></li>
+        <li><a href="/pages/page3.html">Katha Vachan</a></li>
+      </ul>
+    </div>
+<!-- GET IN TOUCH -->
+<div class="footer-col">
+  <h4>Get in Touch</h4>
+
+  <p>
+    <i class="fa-solid fa-location-dot"></i>
+    24, Kailash Apartment,<br>
+    45, IP Extension,<br>
+    Delhi – 110092
+  </p>
+
+  <p>
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:shaifalinmastu@gmail.com">
+      shaifalinmastu@gmail.com
+    </a>
+  </p>
+
+  <p>
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:9818688911">9818688911</a> /
+    <a href="tel:8527561356">8527561356</a>
+  </p>
+</div>
+
+    <!-- SOCIAL -->
+    <div class="footer-col">
+      <h4>Connect With Us</h4>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@shaifaliastropointpvt.ltd.8075?si=Xf6Y14Gvs0u63pn9" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919818688911" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © Copyright 2022, All Rights Reserved, SHAIFALI ASTRO POINT PVT LTD
+  </div>
+</footer>
+
+<script>
+function sendWhatsApp(serviceName) {
+    const phoneNumber = "919818688911";
+
+    const message = `Hello 🙏
+I am interested in *${serviceName}*.
+
+Please share:
+✔️ Details
+✔️ Charges
+✔️ Best date & time
+
+Thank you`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
+
+/* ===============================
+   HAMBURGER TOGGLE
+================================ */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+/* ===============================
+   MOBILE DROPDOWN TAP
+================================ */
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
